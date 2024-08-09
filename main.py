@@ -1,4 +1,4 @@
-import pprint
+import sys
 
 from afn import AFN
 
@@ -68,15 +68,16 @@ def parseFile(fn: str):
 
 
 def main():
-    afn = parseFile("automato.txt")
+    if len(sys.argv) != 3:
+        print("Usage: python3 main.py <automato> <lista-palavras>")
+        sys.exit(1)
+
+    afn = parseFile(sys.argv[1])
     # pprint.pprint(afn.transitionTab, sort_dicts=False)
 
-    with open("lista_de_palavras.txt", "r") as f:
+    with open(sys.argv[2], "r") as f:
         for line in f:
             print(line.strip(), afn.run(line.strip()))
-
-    # s = "___JMP_H10;___NOP;___AND_H6E;___JN_H7A;___STA_H8A"
-    # print(afn.run(s, step=False))
 
 
 if __name__ == "__main__":
