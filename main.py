@@ -69,7 +69,7 @@ def parseFile(fn: str):
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: python3 main.py <automato> <lista-palavras>")
+        print("Usage: python main.py <automato> <lista-palavras>")
         sys.exit(1)
 
     afn = parseFile(sys.argv[1])
