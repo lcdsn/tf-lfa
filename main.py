@@ -1,6 +1,10 @@
 import sys
 
+from pprint import pprint
 from afn import AFN
+from afd import AFD
+
+from convert import convert
 
 
 def parseFile(fn: str):
@@ -73,11 +77,14 @@ def main():
         sys.exit(1)
 
     afn = parseFile(sys.argv[1])
-    # pprint.pprint(afn.transitionTab, sort_dicts=False)
+    afd = convert(afn)
+    # pprint(afd.transitionTab, sort_dicts=False)
+    # pprint(afd.finalStates)
+    # exit()
 
     with open(sys.argv[2], "r") as f:
         for line in f:
-            print(line.strip(), afn.run(line.strip()))
+            print(line.strip(), afd.run(line.strip()))
 
 
 if __name__ == "__main__":

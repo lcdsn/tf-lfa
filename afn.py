@@ -8,6 +8,7 @@ class AFN:
         finalStates: set,
     ):
         self.alphabet = alphabet
+        self.states = states
         self.transitionTab = transitionTab
         self.initState = initState
         self.finalStates = finalStates
