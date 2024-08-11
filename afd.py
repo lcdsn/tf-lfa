@@ -42,7 +42,7 @@ class AFD:
             f.write("{" + ",".join(self.alphabet) + "},")
             f.write(f"{self.initState},")
             f.write("{" + ",".join(self.finalStates) + "}")
-            f.write("}\n")
+            f.write(")\n")
             f.write("Prog:\n")
 
             for e1 in self.transitionTab:
@@ -52,6 +52,7 @@ class AFD:
 
 if __name__ == "__main__":
     tst = AFD(
+        "teste",
         ["a", "b"],  # alfabeto
         ["q0", "q1"],  # estados
         {"q0": {"a": "q1"}, "q1": {"a": "q0"}},  # tabela de transição
