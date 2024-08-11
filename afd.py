@@ -14,6 +14,9 @@ class AFD:
         self.finalStates = finalStates
 
     def getTransition(self, name: str, ch: str):
+        if name not in self.states:
+            return None
+
         try:
             return self.transitionTab[name][ch]
         except KeyError:

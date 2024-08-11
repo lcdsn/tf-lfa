@@ -40,7 +40,7 @@ def convert(afn: AFN):
 
     return AFD(
         alphabet=afn.alphabet,
-        states=afn.states,
+        states=list(newTable.keys()),
         transitionTab=newTable,
         initState=afn.initState,
         finalStates=finalStates,
