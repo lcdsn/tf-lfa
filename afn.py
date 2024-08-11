@@ -1,12 +1,14 @@
 class AFN:
     def __init__(
         self,
+        name: str,
         alphabet: list,
         states: list,
         transitionTab: dict,
         initState: str,
         finalStates: set,
     ):
+        self.name = name
         self.alphabet = alphabet
         self.states = states
         self.transitionTab = transitionTab
@@ -45,6 +47,7 @@ class AFN:
 
 if __name__ == "__main__":
     tst3 = AFN(
+        name="tst3",
         alphabet=["a", "b"],
         states=["q0", "q1", "q2", "qf"],
         transitionTab={

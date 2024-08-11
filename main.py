@@ -63,6 +63,7 @@ def parseFile(fn: str):
             tabelaTransicao[estado].setdefault(transicao, set()).update(destinos)
 
     return AFN(
+        name=nome,
         alphabet=alfabeto,
         states=estados,
         transitionTab=tabelaTransicao,
@@ -85,6 +86,18 @@ def main():
     with open(sys.argv[2], "r") as f:
         for line in f:
             print(line.strip(), afd.run(line.strip()))
+
+    print()
+    while True:
+        op = input("Salvar? [Y/N]: ")
+        if op.lower() == "y":
+            afd.salvaAFD(afd.name + ".txt")
+            print(f"Autômato salvo em {afd.name}.txt")
+            break
+        elif op.lower == "n":
+            break
+        else:
+            print("Opção inválida.")
 
 
 if __name__ == "__main__":

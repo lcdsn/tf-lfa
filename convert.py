@@ -39,6 +39,7 @@ def convert(afn: AFN):
             finalStates = finalStates.union([state])
 
     return AFD(
+        name=afn.name + "_AFD",
         alphabet=afn.alphabet,
         states=list(newTable.keys()),
         transitionTab=newTable,
@@ -49,6 +50,7 @@ def convert(afn: AFN):
 
 def main():
     afn = AFN(
+        "teste",
         ["a", "b"],  # alfabeto
         ["q0", "q1", "q2", "qf"],  # estados
         {

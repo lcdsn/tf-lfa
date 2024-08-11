@@ -1,12 +1,14 @@
 class AFD:
     def __init__(
         self,
+        name: str,
         alphabet: list,
         states: list,
         transitionTab: dict,
         initState: str,
         finalStates: set,
     ):
+        self.name = name
         self.alphabet = alphabet
         self.states = states
         self.transitionTab = transitionTab
@@ -31,6 +33,21 @@ class AFD:
                 return False
 
         return True if cur in self.finalStates else False
+
+    def salvaAFD(self, fn: str):
+        with open(fn, "w") as f:
+            f.write(f"{self.name}=")
+            f.write("(")
+            f.write("{" + ",".join(self.states) + "},")
+            f.write("{" + ",".join(self.alphabet) + "},")
+            f.write(f"{self.initState},")
+            f.write("{" + ",".join(self.finalStates) + "}")
+            f.write("}\n")
+            f.write("Prog:\n")
+
+            for e1 in self.transitionTab:
+                for e2 in self.transitionTab[e1]:
+                    f.write(f"({e1},{e2})={{{self.transitionTab[e1][e2]}}}\n")
 
 
 if __name__ == "__main__":
