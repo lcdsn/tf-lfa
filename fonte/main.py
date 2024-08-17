@@ -74,7 +74,7 @@ def parseFile(fn: str):
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: python main.py <automato> <lista-palavras>")
+        print("Uso: .\determinizador.exe <automato> <lista-palavras>")
         sys.exit(1)
 
     afn = parseFile(sys.argv[1])
