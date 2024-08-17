@@ -1,0 +1,5 @@
+determinizador.exe <autômato> <lista-palavras>
+
+autômato: arquivo de definição do autômato
+
+lista-palavras: arquivo contendo palavras a serem testadas (uma por linha)

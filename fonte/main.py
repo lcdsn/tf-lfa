@@ -89,7 +89,7 @@ def main():
 
     print()
     while True:
-        op = input("Salvar? [Y/N]: ")
+        op = input("Salvar AFD? [Y/N]: ")
         if op.lower() == "y":
             afd.salvaAFD(afd.name + ".txt")
             print(f"Autômato salvo em {afd.name}.txt")

@@ -47,7 +47,7 @@ class AFD:
 
             for e1 in self.transitionTab:
                 for e2 in self.transitionTab[e1]:
-                    f.write(f"({e1},{e2})={{{self.transitionTab[e1][e2]}}}\n")
+                    f.write(f"({e1},{e2})={self.transitionTab[e1][e2]}\n")
 
 
 if __name__ == "__main__":
